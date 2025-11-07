@@ -1,0 +1,88 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background: #004aad;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+h1, h2 {
+    margin: 0.5rem 0;
+}
+
+.contact-form, .contact-details {
+    background: white;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background: #004aad;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #003a86;
+    }
+
+.ticket-result {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: green;
+    text-align: center;
+}
+
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin: 0.8rem 0;
+}
+
+.contact-details a {
+    color: #004aad;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #004aad;
+    color: white;
+    margin-top: 2rem;
+}
