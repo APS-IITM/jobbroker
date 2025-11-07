@@ -1,13 +1,16 @@
+/* Base styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #5f72bd, #9b23ea);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
+/* Container */
 .auth-container {
     width: 100%;
     max-width: 400px;
@@ -15,64 +18,144 @@ body {
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
+/* Title */
 .auth-box h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #333;
+    font-size: 1.8rem;
 }
 
+/* Form elements */
 .form-group {
     margin-bottom: 15px;
 }
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #555;
     margin-bottom: 5px;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 15px;
-    transition: border-color 0.2s ease;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
     input:focus {
         border-color: #9b23ea;
+        box-shadow: 0 0 0 2px rgba(155, 35, 234, 0.2);
         outline: none;
     }
 
+/* Buttons */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #9b23ea;
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.25s ease, transform 0.1s ease;
 }
 
     button:hover {
         background: #7b1dc5;
     }
 
+    button:active {
+        transform: scale(0.98);
+    }
+
+/* Toggle text */
 .toggle-text {
     text-align: center;
     margin-top: 15px;
     color: #555;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 #toggleForm {
     color: #9b23ea;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
+}
+
+/* Animations for form switch */
+.auth-box {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 768px) {
+    .auth-container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.6rem;
+    }
+
+    input, button {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .auth-container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    input, button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .toggle-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .auth-container {
+        max-width: 420px;
+    }
 }
