@@ -1,3 +1,4 @@
+/* ===== Base Styles ===== */
 body {
     font-family: "Segoe UI", sans-serif;
     background-color: #f6f9fc;
@@ -18,11 +19,13 @@ h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 25px;
+    font-size: 2rem;
 }
 
 h2 {
     color: #1e88e5;
     margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
 .section {
@@ -34,6 +37,7 @@ label {
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 4px;
+    font-size: 0.95rem;
 }
 
 input[type="text"],
@@ -45,6 +49,7 @@ input[type="file"] {
     border: 1px solid #dcdcdc;
     border-radius: 6px;
     box-sizing: border-box;
+    font-size: 0.95rem;
 }
 
 .note {
@@ -59,7 +64,7 @@ input[type="file"] {
     color: white;
     border: none;
     padding: 12px;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
@@ -74,4 +79,85 @@ input[type="file"] {
     text-align: center;
     margin-top: 15px;
     font-weight: 600;
+}
+
+/* ===== Responsive Design ===== */
+
+/* For tablets and smaller laptops */
+@media (max-width: 900px) {
+    .container {
+        max-width: 90%;
+        padding: 25px 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="file"] {
+        font-size: 0.9rem;
+        padding: 9px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    #statusMessage {
+        font-size: 0.9rem;
+    }
+}
+
+/* For very small screens (?400px) */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 9px;
+    }
 }
