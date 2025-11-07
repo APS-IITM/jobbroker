@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Job Broker</title>
+    <link rel="stylesheet" href="AdminPanel/admin.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <button onclick="logoutAdmin()">Logout</button>
+        </header>
+
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total Enrollments</h3>
+                <p id="totalEnrollments">--</p>
+            </div>
+            <div class="card">
+                <h3>Total Payments (?)</h3>
+                <p id="totalPayments">--</p>
+            </div>
+            <div class="card">
+                <h3>Active Jobseekers</h3>
+                <p id="totalJobseekers">--</p>
+            </div>
+        </section>
+
+        <nav class="admin-nav">
+            <button onclick="showSection('jobseekers')">Manage Jobseekers</button>
+            <button onclick="showSection('assign')">Assign Resumes</button>
+            <button onclick="showSection('interview')">Update Interview</button>
+            <button onclick="showSection('payments')">View Payments</button>
+        </nav>
+
+        <section id="jobseekers" class="admin-section">
+            <h2>Manage Jobseekers</h2>
+            <table id="jobseekerTable">
+                <thead>
+                    <tr><th>Name</th><th>Email</th><th>Plan</th><th>Status</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="assign" class="admin-section hidden">
+            <h2>Assign Resumes to Employers</h2>
+            <form id="assignForm">
+                <input type="text" placeholder="Jobseeker Email" required>
+                <input type="text" placeholder="Employer Email" required>
+                <button type="submit">Assign</button>
+            </form>
+            <p class="warning-text">?? Add API to update assignment in database.</p>
+        </section>
+
+        <section id="interview" class="admin-section hidden">
+            <h2>Update Interview Status</h2>
+            <form id="interviewForm">
+                <input type="text" placeholder="Jobseeker Email" required>
+                <select>
+                    <option>Pending</option>
+                    <option>Scheduled</option>
+                    <option>Completed</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+            <p class="warning-text">?? Add API for updating interview status.</p>
+        </section>
+
+        <section id="payments" class="admin-section hidden">
+            <h2>Payments & Reports</h2>
+            <table id="paymentsTable">
+                <thead>
+                    <tr><th>Jobseeker</th><th>Plan</th><th>Amount</th><th>Date</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="generateReport()">Generate Report (CSV)</button>
+        </section>
+    </div>
+
+    <script src="AdminPanel/admin.js"></script>
+</body>
+</html>

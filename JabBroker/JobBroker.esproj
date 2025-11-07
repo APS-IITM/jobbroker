@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2752196">
+  <ItemGroup>
+    <Folder Include="Jobseeker_Dashboard\" />
+    <Folder Include="AdminPanel\" />
+    <Folder Include="SupportContact\" />
+    <Folder Include="Register_Login\" />
+    <Folder Include="Profile_Documents\" />
+    <Folder Include="Plans_Enrollment\" />
+  </ItemGroup>
+</Project>
