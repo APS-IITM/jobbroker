@@ -5,11 +5,13 @@
     --muted: #666;
 }
 
+/* ---------- Base Styles ---------- */
 body {
     font-family: "Inter", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     margin: 0;
+    line-height: 1.6;
 }
 
 .container {
@@ -21,7 +23,10 @@ body {
 
 .header {
     background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
     .header .container {
@@ -34,25 +39,40 @@ body {
 .logo {
     color: var(--accent);
     margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-nav a {
-    color: var(--text);
-    margin-left: 15px;
-    text-decoration: none;
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-    nav a.active {
-        color: var(--accent);
-        font-weight: bold;
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-weight: 500;
     }
 
-.about h2, .about h3 {
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+.about h2,
+.about h3 {
     color: var(--accent);
+    margin-top: 1.2rem;
 }
 
-.about p, .about ul {
-    line-height: 1.6;
+.about p,
+.about ul {
     color: var(--muted);
 }
 
@@ -66,4 +86,81 @@ nav a {
     padding: 15px;
     font-size: 0.9em;
     color: var(--muted);
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .about h2 {
+        font-size: 1.4rem;
+    }
+
+    .about h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .header .container {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+        nav a {
+            font-size: 0.95rem;
+        }
+
+    .container {
+        padding: 12px;
+    }
+
+    .about h2 {
+        font-size: 1.3rem;
+    }
+
+    .about h3 {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
 }
