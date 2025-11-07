@@ -1,3 +1,4 @@
+/* ?? Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
+/* ?? Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -21,6 +22,7 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -42,7 +44,12 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s;
 }
+
+    .navbar a:hover {
+        color: #1a73e8;
+    }
 
 .nav-buttons button {
     margin-left: 0.5rem;
@@ -50,6 +57,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .primary {
@@ -61,7 +69,7 @@ body {
     opacity: 0.9;
 }
 
-/* Hero */
+/* ?? Hero Section */
 .hero {
     height: 80vh;
     background: linear-gradient(to right, #1a73e8, #4a90e2);
@@ -74,7 +82,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
 }
 
@@ -83,12 +91,25 @@ body {
     margin-bottom: 2rem;
 }
 
-/* How it Works */
+.hero-content button {
+    margin: 0 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+/* ?? How it Works */
 .how-it-works {
     padding: 3rem 10%;
     background: #fff;
     text-align: center;
 }
+
+    .how-it-works h2 {
+        font-size: 2rem;
+    }
 
 .steps {
     display: flex;
@@ -103,7 +124,12 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     margin: 1rem;
+    transition: transform 0.3s;
 }
+
+    .step:hover {
+        transform: translateY(-5px);
+    }
 
 .step-number {
     background: #1a73e8;
@@ -115,17 +141,22 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Plans */
+/* ?? Plans */
 .plans {
     padding: 3rem 10%;
     background: #f9fafb;
     text-align: center;
 }
 
+    .plans h2 {
+        font-size: 2rem;
+    }
+
 .plan-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -134,9 +165,13 @@ body {
     border-radius: 10px;
     padding: 2rem;
     width: 280px;
-    margin: 1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
+
+    .plan-card:hover {
+        transform: translateY(-5px);
+    }
 
     .plan-card.popular {
         border: 2px solid #1a73e8;
@@ -148,17 +183,22 @@ body {
     margin: 0.5rem 0;
 }
 
-/* Testimonials */
+/* ?? Testimonials */
 .testimonials {
     padding: 3rem 10%;
     background: #fff;
     text-align: center;
 }
 
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+
 .testimonial-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -176,11 +216,106 @@ body {
         color: #1a73e8;
     }
 
-/* Footer */
+/* ?? Footer */
 footer {
     background: #1a73e8;
     color: white;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+}
+
+/* ?? Responsive Design */
+
+/* Tablets (?1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .steps, .plan-container, .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card, .step, .testimonial {
+        width: 80%;
+        max-width: 400px;
+    }
+}
+
+/* Mobiles (?768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .navbar ul {
+            flex-direction: column;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .navbar li {
+            margin: 0.5rem 0;
+        }
+
+    .nav-buttons {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        height: auto;
+        padding: 4rem 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content button {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .plan-card {
+        width: 90%;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobiles (?480px) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .plan-card, .step, .testimonial {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar ul {
+        font-size: 0.9rem;
+    }
 }
